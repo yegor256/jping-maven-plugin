@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.yegor256","c":"JpingMojo","l":"execute()"},{"p":"com.yegor256","c":"JpingMojo","l":"JpingMojo()","url":"%3Cinit%3E()"}]

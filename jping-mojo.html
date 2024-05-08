@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jcabi-maven-plugin &#x2013; jping:jping</title>
+        <link media="all" rel="stylesheet" type="text/css" href="./css/jcabi.css"/>
+                                <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="./js/jcabi.js"></script>
+    </head>
+    <body>
+                <div class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <nav class="menu-section">
+                <ul class="menu" id="menu">
+                                                                                    <li>
+                            <span>Overview</span>
+                                                            <ul>
+                                                                                                    <li >
+                            <span>                        <a href="index.html" title="Introduction">Introduction</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="usage.html" title="Usage">Usage</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="plugin-info.html" title="Goals">Goals</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="faq.html" title="FAQ">FAQ</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <span>Project Documentation</span>
+                                                            <ul>
+                                                                                                    <li >
+                            <span>                        <a href="project-info.html" title="Project Information">Project Information</a>
+        </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="project-reports.html" title="Project Reports">Project Reports</a>
+        </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
+                                                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            <div class="right-side">
+                <main>
+                    <div class="content">
+                        <header>
+                            <div class="logo">
+                                <a href="${decoration.bannerLeft.href}"
+                                    title=" logo ">
+                                    <img src="${decoration.bannerLeft.src}"
+                                        alt="jping-maven-plugin"
+                                                                                                                        itemprop="image"
+                                    />
+                                </a>
+                            </div>
+                            <ul class="badges">
+                                <li>
+                                    <strong itemprop="version">0.0.2</strong>
+                                </li>
+                                <li>
+                                    
+                                    <time itemprop="datePublished" datetime="2024-05-08T10:22:01Z">
+                                        
+                                        08-May-2024
+                                    </time>
+                                </li>
+                                <li class="menu-button">menu</li>
+                            </ul>
+                        </header>
+                        <div id="here-goes-menu" class="menu-off"></div>
+                                                                            <a href="https://github.com/yegor256/jping-maven-plugin">
+                                <img src="https://www.jcabi.com/fork-me.svg" class="fork-me"/>
+                            </a>
+                                                <article itemprop="articleBody">
+                            <section>
+<h2><a name="jping:jping"></a>jping:jping</h2><a name="jping:jping"></a>
+<p><strong>Full name</strong>:</p>
+<p>com.yegor256:jping-maven-plugin:0.0.2:jping</p>
+<p><strong>Description</strong>:</p>
+<p>Checks whether the host machine is connected to the Internet.</p>
+<p><strong>Attributes</strong>:</p>
+<ul>
+<li>Requires a Maven project to be executed.</li>
+<li>Requires dependency resolution of artifacts in scope: <code>compile</code>.</li>
+<li>The goal is thread-safe and supports parallel builds.</li>
+<li>Since version: <code>0.0.1</code>.</li>
+<li>Binds by default to the <a class="externalLink" href="https://maven.apache.org/ref/current/maven-core/lifecycles.html">lifecycle phase</a>: <code>initialize</code>.</li></ul><section>
+<h3><a name="Optional_Parameters"></a>Optional Parameters</h3><a name="Optional_Parameters"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Name</th>
+<th>Type</th>
+<th>Since</th>
+<th>Description</th></tr>
+<tr class="b">
+<td align="left"><a href="#connectTimeout"><code>&lt;connectTimeout&gt;</code></a></td>
+<td><code>int</code></td>
+<td><code>-</code></td>
+<td>Timeout to make a connection (in milliseconds).<br /><strong>Default</strong>: <code>4000</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#failWhenOffline"><code>&lt;failWhenOffline&gt;</code></a></td>
+<td><code>boolean</code></td>
+<td><code>-</code></td>
+<td>Fail the build if there is no Internet connection?<br /><strong>Default</strong>: <code>false</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#fileName"><code>&lt;fileName&gt;</code></a></td>
+<td><code>File</code></td>
+<td><code>-</code></td>
+<td>File to create.<br /><strong>Default</strong>: <code>${project.build.directory}/jping.txt</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#propertyName"><code>&lt;propertyName&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Property name to set.<br /><strong>Default</strong>: <code>we-are-online</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#propertyValue"><code>&lt;propertyValue&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>Property value to set.<br /><strong>Default</strong>: <code>true</code></td></tr>
+<tr class="a">
+<td align="left"><a href="#readTimeout"><code>&lt;readTimeout&gt;</code></a></td>
+<td><code>int</code></td>
+<td><code>-</code></td>
+<td>Read to make a connection (in milliseconds).<br /><strong>Default</strong>: <code>4000</code></td></tr>
+<tr class="b">
+<td align="left"><a href="#url"><code>&lt;url&gt;</code></a></td>
+<td><code>String</code></td>
+<td><code>-</code></td>
+<td>The URL to ping.<br /><strong>Default</strong>: <code>https://www.google.com</code></td></tr></table></section><section>
+<h3><a name="Parameter_Details"></a>Parameter Details</h3><a name="Parameter_Details"></a><a name="connectTimeout"><section>
+<h4><a name="a.3CconnectTimeout.3E"></a>&lt;connectTimeout&gt;</h4><a name="a.3CconnectTimeout.3E"></a></a>
+<div>Timeout to make a connection (in milliseconds).</div>
+<ul>
+<li><strong>Type</strong>: <code>int</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>4000</code></li></ul><hr /></section><a name="failWhenOffline"><section>
+<h4><a name="a.3CfailWhenOffline.3E"></a>&lt;failWhenOffline&gt;</h4><a name="a.3CfailWhenOffline.3E"></a></a>
+<div>Fail the build if there is no Internet connection?</div>
+<ul>
+<li><strong>Type</strong>: <code>boolean</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>false</code></li></ul><hr /></section><a name="fileName"><section>
+<h4><a name="a.3CfileName.3E"></a>&lt;fileName&gt;</h4><a name="a.3CfileName.3E"></a></a>
+<div>File to create.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.io.File</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>${project.build.directory}/jping.txt</code></li></ul><hr /></section><a name="propertyName"><section>
+<h4><a name="a.3CpropertyName.3E"></a>&lt;propertyName&gt;</h4><a name="a.3CpropertyName.3E"></a></a>
+<div>Property name to set.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>we-are-online</code></li></ul><hr /></section><a name="propertyValue"><section>
+<h4><a name="a.3CpropertyValue.3E"></a>&lt;propertyValue&gt;</h4><a name="a.3CpropertyValue.3E"></a></a>
+<div>Property value to set.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>true</code></li></ul><hr /></section><a name="readTimeout"><section>
+<h4><a name="a.3CreadTimeout.3E"></a>&lt;readTimeout&gt;</h4><a name="a.3CreadTimeout.3E"></a></a>
+<div>Read to make a connection (in milliseconds).</div>
+<ul>
+<li><strong>Type</strong>: <code>int</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>4000</code></li></ul><hr /></section><a name="url"><section>
+<h4><a name="a.3Curl.3E"></a>&lt;url&gt;</h4><a name="a.3Curl.3E"></a></a>
+<div>The URL to ping.</div>
+<ul>
+<li><strong>Type</strong>: <code>java.lang.String</code></li>
+<li><strong>Required</strong>: <code>report.plugin.goal.no</code></li>
+<li><strong>Default</strong>: <code>https://www.google.com</code></li></ul></section></section></section>
+                        </article>
+                    </div>
+                </main>
+                <footer class="legal-notes">
+                    <div>
+                        Copyright &#169;
+                                                                            2012-2024
+                                            </div>
+                    <div>jcabi.com, All Rights Reserved.</div>
+                    <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

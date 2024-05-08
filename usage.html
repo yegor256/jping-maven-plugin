@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jcabi-maven-plugin &#x2013; Usage</title>
+        <link media="all" rel="stylesheet" type="text/css" href="./css/jcabi.css"/>
+                    <meta name="author" content="Yegor Bugayenko" />
+                                <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script src="./js/jcabi.js"></script>
+    </head>
+    <body>
+                <div class="page" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <nav class="menu-section">
+                <ul class="menu" id="menu">
+                                                                                    <li>
+                            <span>Overview</span>
+                                                            <ul>
+                                                                                                    <li >
+                            <span>                        <a href="index.html" title="Introduction">Introduction</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li  class='active' >
+                            <span>                        <a href="usage.html" title="Usage">Usage</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="plugin-info.html" title="Goals">Goals</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="faq.html" title="FAQ">FAQ</a>
+        </span>
+                                                                                                                                                                <ul>
+                                                                    </ul>
+                                                    </li>
+                                                                                        </ul>
+                                                    </li>
+                                            <li>
+                            <span>Project Documentation</span>
+                                                            <ul>
+                                                                                                    <li >
+                            <span>                        <a href="project-info.html" title="Project Information">Project Information</a>
+        </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </li>
+                                                                                                                        <li >
+                            <span>                        <a href="project-reports.html" title="Project Reports">Project Reports</a>
+        </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
+                                                                                        </ul>
+                                                    </li>
+                                    </ul>
+            </nav>
+            <div class="right-side">
+                <main>
+                    <div class="content">
+                        <header>
+                            <div class="logo">
+                                <a href="${decoration.bannerLeft.href}"
+                                    title=" logo ">
+                                    <img src="${decoration.bannerLeft.src}"
+                                        alt="jping-maven-plugin"
+                                                                                                                        itemprop="image"
+                                    />
+                                </a>
+                            </div>
+                            <ul class="badges">
+                                <li>
+                                    <strong itemprop="version">0.0.2</strong>
+                                </li>
+                                <li>
+                                    
+                                    <time itemprop="datePublished" datetime="2024-05-08T10:21:44Z">
+                                        
+                                        08-May-2024
+                                    </time>
+                                </li>
+                                <li class="menu-button">menu</li>
+                            </ul>
+                        </header>
+                        <div id="here-goes-menu" class="menu-off"></div>
+                                                                            <a href="https://github.com/yegor256/jping-maven-plugin">
+                                <img src="https://www.jcabi.com/fork-me.svg" class="fork-me"/>
+                            </a>
+                                                <article itemprop="articleBody">
+                            <section>
+<h2><a name="Supplementary_Maven_plugin_for_Jcabi_Parent_POM"></a>Supplementary Maven plugin for Jcabi Parent POM</h2>
+<p>It is used in <a href="../parent/index.html"><code>com.jcabi:parent</code></a> POM project in order to automate certain build operations.</p>
+<p>You can use it directly, as explained in the examples:</p>
+<ul>
+<li><a href="./example-ajc.html"><code>ajc</code></a>: weaves <code>.class</code> files with AspectJ aspects available in classpath (binary weaving).</li>
+<li><a href="./example-versionalize.html"><code>versionalize</code></a>: adds plain text files with version information to every Java package in your source directory.</li></ul>
+<p>Starting from the version <code>0.10</code> there are two parameters you may setup to select the version of your Java code :</p>
+<ul>
+<li>source</li>
+<li>target</li></ul>
+<p>If you don't setup them, it is assumed that your code is compatible with Java <code>1.6</code>. For Java 8 configuration look the example <a href="./example-java8.html"><code>java8</code></a>.</p><section>
+<h3><a name="Cutting_Edge_Version"></a>Cutting Edge Version</h3>
+<p>If you want to use current version of the product, you can do it with this configuration in your <code>pom.xml</code>:</p>
+<div class="source">
+<pre>&lt;pluginRepositories&gt;
+  &lt;pluginRepository&gt;
+    &lt;id&gt;oss.sonatype.org&lt;/id&gt;
+    &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots/&lt;/url&gt;
+  &lt;/pluginRepository&gt;
+&lt;/pluginRepositories&gt;
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;com.jcabi&lt;/groupId&gt;
+      &lt;artifactId&gt;jcabi-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+      [...]
+      &lt;dependencies&gt;
+        &lt;dependency&gt;
+          &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+          &lt;artifactId&gt;hibernate-validator&lt;/artifactId&gt;
+          &lt;version&gt;5.0.0.Final&lt;/version&gt;
+          &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+      &lt;/dependencies&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;</pre></div>
+<p>Note: jcabi-maven-plugin has to have hibernate-validator dependency as in the example to avoid &quot;JSR-303 validator failed to initialize: Unable to instantiate Configuration&quot; warning during build.</p></section></section>
+                        </article>
+                    </div>
+                </main>
+                <footer class="legal-notes">
+                    <div>
+                        Copyright &#169;
+                                                                            2012-2024
+                                            </div>
+                    <div>jcabi.com, All Rights Reserved.</div>
+                    <div><a href="http://maven.apache.org/privacy-policy.html">Privacy Policy</a>.</div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
