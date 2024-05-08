@@ -18,7 +18,7 @@ Add it to your `pom.xml`:
       <plugin>
         <groupId>com.yegor256</groupId>
         <artifactId>jping-maven-plugin</artifactId>
-        <version>0.0.0</version>
+        <version>0.0.2</version>
         <executions>
           <execution>
             <goals>
