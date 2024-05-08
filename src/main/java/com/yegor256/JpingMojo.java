@@ -24,6 +24,10 @@
 package com.yegor256;
 
 import com.jcabi.log.Logger;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URLConnection;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
@@ -66,6 +70,27 @@ public final class JpingMojo extends AbstractMojo {
     @Parameter(defaultValue = "false")
     private transient boolean failWhenOffline;
 
+    /**
+     * The URL to ping.
+     * @checkstyle MemberNameCheck (7 lines)
+     */
+    @Parameter(defaultValue = "https://www.google.com")
+    private transient String url;
+
+    /**
+     * Timeout to make a connection (in milliseconds).
+     * @checkstyle MemberNameCheck (7 lines)
+     */
+    @Parameter(defaultValue = "4000")
+    private transient int connectTimeout;
+
+    /**
+     * Read to make a connection (in milliseconds).
+     * @checkstyle MemberNameCheck (7 lines)
+     */
+    @Parameter(defaultValue = "4000")
+    private transient int readTimeout;
+
     @Override
     public void execute() throws MojoFailureException {
         StaticLoggerBinder.getSingleton().setMavenLog(this.getLog());
@@ -85,7 +110,18 @@ public final class JpingMojo extends AbstractMojo {
      * @return TRUE if we are online
      */
     private boolean ping() throws MojoFailureException {
-        final boolean online = false;
+        boolean online = true;
+        try {
+            final URLConnection conn = new URI(this.url).toURL().openConnection();
+            conn.setConnectTimeout(this.connectTimeout);
+            conn.setReadTimeout(this.readTimeout);
+            conn.connect();
+            conn.getInputStream().close();
+        } catch (final IOException ignored) {
+            online = false;
+        } catch (final URISyntaxException ex) {
+            throw new IllegalStateException(ex);
+        }
         if (!online && this.failWhenOffline) {
             throw new MojoFailureException(
                 "There is no Internet connection"

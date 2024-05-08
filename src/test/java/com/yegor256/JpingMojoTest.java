@@ -36,16 +36,18 @@ import org.junit.jupiter.api.io.TempDir;
  *
  * @since 0.0.1
  */
-public final class JpingMojoTest {
+final class JpingMojoTest {
 
     @Test
     @ExtendWith(WeAreOnline.class)
-    public void testSimpleScenario(@TempDir final Path temp) throws Exception {
+    void testSimpleScenario(@TempDir final Path temp) throws Exception {
         new Farea(temp).together(
             f -> {
                 f.build()
                     .plugins()
                     .appendItself()
+                    .execution("x")
+                    .goals("jping")
                     .configuration()
                     .set("propertyName", "foo")
                     .set("failWhenOffline", "true");
@@ -53,19 +55,21 @@ public final class JpingMojoTest {
                 MatcherAssert.assertThat(
                     "Sets property correctly",
                     f.log(),
-                    Matchers.containsString("${foo} is set to \"TRUE\"")
+                    Matchers.containsString("${foo} set to \"true\"")
                 );
             }
         );
     }
 
     @Test
-    public void testWhenOffline(@TempDir final Path temp) throws Exception {
+    void testWhenOffline(@TempDir final Path temp) throws Exception {
         new Farea(temp).together(
             f -> {
                 f.build()
                     .plugins()
                     .appendItself()
+                    .execution("x")
+                    .goals("jping")
                     .configuration()
                     .set("propertyName", "bar")
                     .set("failWhenOffline", "false");
@@ -73,7 +77,7 @@ public final class JpingMojoTest {
                 MatcherAssert.assertThat(
                     "Sets property correctly (even when offline)",
                     f.log(),
-                    Matchers.containsString("${bar} is set to ")
+                    Matchers.containsString("${bar} set to ")
                 );
             }
         );
