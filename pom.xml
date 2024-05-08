@@ -31,7 +31,7 @@ SOFTWARE.
   </parent>
   <groupId>com.yegor256</groupId>
   <artifactId>jping-maven-plugin</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>maven-plugin</packaging>
   <name>jping-maven-plugin</name>
   <description>Checks whether the host machine is currently connected to the Internet</description>
