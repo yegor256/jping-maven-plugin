@@ -1,4 +1,4 @@
-# Maven plugin cheking if the host machine is connected to the Internet 
+# It checks whether the machine is connected to the Internet 
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 [![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/jping-maven-plugin)](http://www.rultor.com/p/yegor256/jping-maven-plugin)
@@ -11,7 +11,29 @@
 
 Add it to your `pom.xml`:
 
-```
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.yegor256</groupId>
+        <artifactId>jping-maven-plugin</artifactId>
+        <version>0.0.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jping</goal>
+            </goals>
+            <configuration>
+              <propertyName>we-are-online</propertyName>
+              <failWhenOffline>false</failWhenOffline>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 ## How to contribute?
