@@ -95,14 +95,23 @@ public final class JpingMojo extends AbstractMojo {
     public void execute() throws MojoFailureException {
         StaticLoggerBinder.getSingleton().setMavenLog(this.getLog());
         final boolean online = this.ping();
-        this.project.getProperties().setProperty(
-            this.propertyName, Boolean.toString(online)
-        );
-        Logger.info(
-            this,
-            "Property ${%s} set to \"%s\"",
-            this.propertyName, online
-        );
+        if (online) {
+            final String value = Boolean.toString(online);
+            this.project.getProperties().setProperty(
+                this.propertyName, value
+            );
+            Logger.info(
+                this,
+                "Property ${%s} set to \"%s\"",
+                this.propertyName, value
+            );
+        } else {
+            Logger.info(
+                this,
+                "Property ${%s} is not set",
+                this.propertyName
+            );
+        }
     }
 
     /**

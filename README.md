@@ -27,6 +27,7 @@ Add it to your `pom.xml`:
             <configuration>
               <propertyName>we-are-online</propertyName>
               <failWhenOffline>false</failWhenOffline>
+              <url>https://www.google.com</url>
             </configuration>
           </execution>
         </executions>
@@ -35,6 +36,12 @@ Add it to your `pom.xml`:
   </build>
 </project>
 ```
+
+It runs, by default, at the `initialize` phase and checks whether
+the machine is connected to the Internet or not (by making a test
+HTTP connection to the `url` specified). If the connection is alive,
+the value of the `we-are-online` property will be set to `true`.
+Otherwise, the property will not be set.
 
 ## How to contribute?
 

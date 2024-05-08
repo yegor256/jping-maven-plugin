@@ -77,7 +77,7 @@ final class JpingMojoTest {
                 MatcherAssert.assertThat(
                     "Sets property correctly (even when offline)",
                     f.log(),
-                    Matchers.containsString("${bar} set to ")
+                    Matchers.containsString("Property ${bar} ")
                 );
             }
         );
