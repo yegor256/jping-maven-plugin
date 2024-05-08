@@ -57,11 +57,18 @@ public final class JpingMojo extends AbstractMojo {
     private transient MavenProject project;
 
     /**
-     * Property name to set to either "TRUE" or "FALSE".
+     * Property name to set.
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "we-are-online")
     private transient String propertyName;
+
+    /**
+     * Property value to set.
+     * @checkstyle MemberNameCheck (7 lines)
+     */
+    @Parameter(defaultValue = "true")
+    private transient String propertyValue;
 
     /**
      * Fail the build if there is no Internet connection?
@@ -96,14 +103,13 @@ public final class JpingMojo extends AbstractMojo {
         StaticLoggerBinder.getSingleton().setMavenLog(this.getLog());
         final boolean online = this.ping();
         if (online) {
-            final String value = Boolean.toString(online);
             this.project.getProperties().setProperty(
-                this.propertyName, value
+                this.propertyName, this.propertyValue
             );
             Logger.info(
                 this,
                 "Property ${%s} set to \"%s\"",
-                this.propertyName, value
+                this.propertyName, this.propertyValue
             );
         } else {
             Logger.info(
