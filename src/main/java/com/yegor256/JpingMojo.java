@@ -24,10 +24,13 @@
 package com.yegor256;
 
 import com.jcabi.log.Logger;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
@@ -55,6 +58,13 @@ public final class JpingMojo extends AbstractMojo {
      */
     @Parameter(defaultValue = "${project}", readonly = true)
     private transient MavenProject project;
+
+    /**
+     * File to create.
+     * @checkstyle MemberNameCheck (7 lines)
+     */
+    @Parameter(defaultValue = "${project.build.directory}/jping.txt")
+    private transient File fileName;
 
     /**
      * Property name to set.
@@ -111,12 +121,39 @@ public final class JpingMojo extends AbstractMojo {
                 "Property ${%s} set to \"%s\"",
                 this.propertyName, this.propertyValue
             );
+            if (this.fileName.getParentFile().mkdirs()) {
+                Logger.info(
+                    this,
+                    "The directory \"%s\" created",
+                    this.fileName.getParentFile()
+                );
+            }
+            try {
+                Files.write(
+                    this.fileName.toPath(),
+                    this.propertyName.getBytes(Charset.defaultCharset())
+                );
+            } catch (final IOException ex) {
+                throw new MojoFailureException(ex);
+            }
+            Logger.info(
+                this,
+                "The file \"%s\" created",
+                this.fileName
+            );
         } else {
             Logger.info(
                 this,
                 "Property ${%s} is not set",
                 this.propertyName
             );
+            if (this.fileName.delete()) {
+                Logger.info(
+                    this,
+                    "The file \"%s\" deleted",
+                    this.fileName
+                );
+            }
         }
     }
 
