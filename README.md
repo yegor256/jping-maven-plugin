@@ -25,9 +25,13 @@ Add it to your `pom.xml`:
               <goal>jping</goal>
             </goals>
             <configuration>
+              <fileName>${project.build.directory}/we-are-online.txt</fileName>
               <propertyName>we-are-online</propertyName>
+              <propertyValue>true</propertyValue>
               <failWhenOffline>false</failWhenOffline>
               <url>https://www.google.com</url>
+              <connectTimeout>1000</connectTimeout>
+              <readTimeout>1000</readTimeout>
             </configuration>
           </execution>
         </executions>
@@ -42,6 +46,10 @@ the machine is connected to the Internet or not (by making a test
 HTTP connection to the `url` specified). If the connection is alive,
 the value of the `we-are-online` property will be set to `true`.
 Otherwise, the property will not be set.
+
+Also, if the machine is connected to the Internet, a file will be
+created, as specified in the `fileName` configuration parameter. If
+the machine is offline, the file will be deleted (if it exists).
 
 ## How to contribute?
 
