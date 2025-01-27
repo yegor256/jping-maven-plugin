@@ -33,4 +33,3 @@ Checks Internet Connection Status
   It may help you prevent build errors caused by network failures.
 
   See {{{./usage.html}Usage}} page.
-

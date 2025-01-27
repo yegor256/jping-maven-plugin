@@ -1,4 +1,4 @@
-# It checks whether the machine is online 
+# It checks whether the machine is online
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 [![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/jping-maven-plugin)](http://www.rultor.com/p/yegor256/jping-maven-plugin)
