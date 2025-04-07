@@ -1,12 +1,12 @@
 # It checks whether the machine is online
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
-[![DevOps By Rultor.com](http://www.rultor.com/b/yegor256/jping-maven-plugin)](http://www.rultor.com/p/yegor256/jping-maven-plugin)
+[![DevOps By Rultor.com](https://www.rultor.com/b/yegor256/jping-maven-plugin)](https://www.rultor.com/p/yegor256/jping-maven-plugin)
 
 [![mvn](https://github.com/yegor256/jping-maven-plugin/actions/workflows/mvn.yml/badge.svg)](https://github.com/yegor256/jping-maven-plugin/actions/workflows/mvn.yml)
-[![PDD status](http://www.0pdd.com/svg?name=yegor256/jping-maven-plugin)](http://www.0pdd.com/p?name=yegor256/jping-maven-plugin)
+[![PDD status](https://www.0pdd.com/svg?name=yegor256/jping-maven-plugin)](https://www.0pdd.com/p?name=yegor256/jping-maven-plugin)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.yegor256/jping-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.yegor256/jping-maven-plugin)
-[![Javadoc](https://javadoc.io/badge/com.yegor256/jping-maven-plugin.svg)](http://www.javadoc.io/doc/com.yegor256/jping-maven-plugin)
+[![Javadoc](https://javadoc.io/badge/com.yegor256/jping-maven-plugin.svg)](https://www.javadoc.io/doc/com.yegor256/jping-maven-plugin)
 [![codecov](https://codecov.io/gh/yegor256/jping-maven-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/yegor256/jping-maven-plugin)
 
 Add it to your `pom.xml`:
