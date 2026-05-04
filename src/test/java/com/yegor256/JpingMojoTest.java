@@ -14,14 +14,13 @@ import org.junit.jupiter.api.io.TempDir;
 
 /**
  * Test case for {@link com.yegor256.JpingMojo}.
- *
  * @since 0.0.1
  */
 final class JpingMojoTest {
 
     @Test
     @ExtendWith(WeAreOnline.class)
-    void testSimpleScenario(@TempDir final Path temp) throws Exception {
+    void runsSimpleScenario(@TempDir final Path temp) throws Exception {
         new Farea(temp).together(
             f -> {
                 f.build()
@@ -35,7 +34,7 @@ final class JpingMojoTest {
                 f.exec("initialize");
                 MatcherAssert.assertThat(
                     "Sets property correctly",
-                    f.log(),
+                    f.log().content(),
                     Matchers.containsString("${foo} set to \"true\"")
                 );
             }
@@ -43,7 +42,7 @@ final class JpingMojoTest {
     }
 
     @Test
-    void testWhenOffline(@TempDir final Path temp) throws Exception {
+    void worksWhenOffline(@TempDir final Path temp) throws Exception {
         new Farea(temp).together(
             f -> {
                 f.build()
@@ -57,11 +56,10 @@ final class JpingMojoTest {
                 f.exec("initialize");
                 MatcherAssert.assertThat(
                     "Sets property correctly (even when offline)",
-                    f.log(),
+                    f.log().content(),
                     Matchers.containsString("Property ${bar} ")
                 );
             }
         );
     }
-
 }
