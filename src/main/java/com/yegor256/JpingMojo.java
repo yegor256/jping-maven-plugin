@@ -23,7 +23,6 @@ import org.slf4j.impl.StaticLoggerBinder;
 
 /**
  * Checks whether the host machine is connected to the Internet.
- *
  * @since 0.0.1
  */
 @Mojo(
@@ -162,5 +161,4 @@ public final class JpingMojo extends AbstractMojo {
         }
         return online;
     }
-
 }
