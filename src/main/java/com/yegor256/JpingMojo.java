@@ -69,7 +69,6 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * The URL to ping.
-     * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "https://www.google.com")
     private transient String url;
