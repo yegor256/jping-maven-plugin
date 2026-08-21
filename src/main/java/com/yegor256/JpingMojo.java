@@ -136,6 +136,10 @@ public final class JpingMojo extends AbstractMojo {
         }
     }
 
+    /**
+     * Ping it.
+     * @return TRUE if we are online
+     */
     private boolean ping() throws MojoFailureException {
         boolean online = true;
         try {
