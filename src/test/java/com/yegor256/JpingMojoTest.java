@@ -14,6 +14,7 @@ import org.junit.jupiter.api.io.TempDir;
 
 /**
  * Test case for {@link com.yegor256.JpingMojo}.
+ *
  * @since 0.0.1
  */
 final class JpingMojoTest {

@@ -23,6 +23,7 @@ import org.slf4j.impl.StaticLoggerBinder;
 
 /**
  * Checks whether the host machine is connected to the Internet.
+ *
  * @since 0.0.1
  */
 @Mojo(
@@ -41,6 +42,7 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * File to create.
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "${project.build.directory}/jping.txt")
@@ -48,6 +50,7 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * Property name to set.
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "we-are-online")
@@ -55,6 +58,7 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * Property value to set.
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "true")
@@ -62,6 +66,7 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * Fail the build if there is no Internet connection?
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "false")
@@ -75,6 +80,7 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * Timeout to make a connection (in milliseconds).
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "4000")
@@ -82,10 +88,18 @@ public final class JpingMojo extends AbstractMojo {
 
     /**
      * Read to make a connection (in milliseconds).
+     *
      * @checkstyle MemberNameCheck (7 lines)
      */
     @Parameter(defaultValue = "4000")
     private transient int readTimeout;
+
+    /**
+     * Constructor.
+     */
+    public JpingMojo() {
+        // Nothing to initialize.
+    }
 
     @Override
     public void execute() throws MojoFailureException {

@@ -5,6 +5,7 @@
 
 /**
  * Maven plugin that checks that a connection to the Internet exists.
+ *
  * @since 0.0.1
  */
 package com.yegor256;
